@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for character in character_objects %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ character.image }}" alt="">
+
+            <div class="card-body">
+              <h4 class="card-text">{{character.name}}</h4>
+              <p>{{ character.status }} - {{ character.species }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="/character/{{ character.name }}">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                  <a href="/edit-character/{{ character.name }}">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button></a>
+                </div>
+                <small class="text-muted">{{ character.created }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

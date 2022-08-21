@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="p-4 p-md-5 mb-4 text-bg-dark">
+    <img src="{{ character.image }}" alt="">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 ">{{character.name}}</h1>
+        <p>{{ character.type }}</p>
+        <p>{{ character.origin }}</p>
+        <p>{{ character.location }}</p>
+        <a href="/">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Back</button></a>
+    </div>
+</div>
+{% endblock %}

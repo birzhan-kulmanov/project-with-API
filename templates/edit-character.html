@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
+    <img src="{{ character.image }}" alt="">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 ">{{character.name}}</h1>
+        <form method="post">
+        <input type="text" name="name" id="name" class="form-control" value="{{ character.name }}" placeholder="Введите новое имя"><br>
+        <input type="text" name="origin" id="origin" class="form-control" value="{{ character.origin }}" placeholder="Введите новое место"><br>
+            <input type="text" name="location" id="location" class="form-control" value="{{ character.location }}" placeholder="Введите новую локацию"><br>
+        <input type="submit" class="btn btn-success" value="Обновить">
+    </form>
+    </div>
+</div>
+{% endblock %}
